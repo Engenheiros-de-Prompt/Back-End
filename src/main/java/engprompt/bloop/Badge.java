@@ -1,4 +1,4 @@
-package com.engprompt.bloop;
+package engprompt.bloop;
 
 class Badge {
     int id;
