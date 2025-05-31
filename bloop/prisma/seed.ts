@@ -68,6 +68,15 @@ async function main() {
       },
     },
   });
+  await prisma.team.create({
+    data: {
+      name: 'Cristiano Ronaldo Fã Clube',
+      managerId: user2.id,
+      users: {
+        create: [{ userId: user2.id }, { userId: user3.id }],
+      },
+    },
+  });
 
   console.log('✅ Seed concluído com sucesso!');
 }

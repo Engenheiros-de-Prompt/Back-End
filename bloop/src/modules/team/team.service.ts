@@ -49,4 +49,28 @@ export class TeamService {
       },
     });
   }
+
+  async getTeamById(id: number) {
+    return this.prisma.team.findUnique({
+      where: { id },
+      include: {
+        users: {
+          include: { user: true },
+        },
+        manager: true,
+      },
+    });
+  }
+
+  async getTeamsByManagerId(managerId: number) {
+    return this.prisma.team.findMany({
+      where: { managerId },
+      include: {
+        users: {
+          include: { user: true },
+        },
+        manager: true,
+      },
+    });
+  }
 }
