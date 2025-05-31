@@ -25,7 +25,7 @@
 
 ## 📦 Instalação
 
-### 1. Clone o projeto
+# 1. Clone o projeto
 ```bash
 git clone https://github.com/seu-usuario/bloop.git
 cd bloop
