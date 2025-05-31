@@ -15,8 +15,8 @@ model User {
   feedbacks  Feedback[]
   badges     UserBadge[]
   teams      TeamUser[]
-  managedTeams Team[]   @relation("ManagerTeams", fields: [], references: [])
-  Manager    Manager?    @relation(fields: [id], references: [userId])
+  managedTeams Team[]   @relation("ManagerTeams")
+  Manager    Manager?
 }
 
 model Badge {
@@ -37,7 +37,6 @@ model UserBadge {
 model Manager {
   userId Int   @id
   user   User  @relation(fields: [userId], references: [id])
-  teams  Team[] @relation("ManagerTeams")
 }
 
 model Team {
