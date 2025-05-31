@@ -1,5 +1,6 @@
 export class FeedbackDto {
-    readonly userId: string;
+    readonly userId: number;
     readonly message: string;
-    readonly rating?: number;
+    readonly Hard: number;
+    readonly Soft: number;
 }
