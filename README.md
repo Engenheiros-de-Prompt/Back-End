@@ -1,8 +1,8 @@
-# 🗣️ Bloop — App web para feedback simplificado
+# 🗣️ FeedBadger — App web para feedback simplificado
 
-**Bloop** é uma aplicação web que facilita o fornecimento de feedback entre membros de um time de forma simples, prática e segura. Ideal para equipes que valorizam comunicação contínua, melhoria constante e cultura de transparência.
+**FeedBadger** é uma aplicação web que facilita o fornecimento de feedback entre membros de um time de forma simples, prática e segura. Ideal para equipes que valorizam comunicação contínua, melhoria constante e cultura de transparência.
 
-![TeamFeedback Screenshot](docs/screenshot.png) <!-- Substitua com o caminho da imagem real -->
+![Time Engenheiros de Prompt](docs/screenshot.png) 
 
 ---
 
