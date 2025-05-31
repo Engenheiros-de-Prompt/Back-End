@@ -1,6 +1,6 @@
 package com.engprompt.bloop.model;
 
-import com.engprompt.bloop.Badge;
+import com.engprompt.bloop.model.Badge;
 
 import java.util.List;
 
