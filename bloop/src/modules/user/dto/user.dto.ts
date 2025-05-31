@@ -1,5 +1,5 @@
 export class UserDto {
   name: string;
-  manager: boolean
+  manager: boolean;
   teamIds: number[];
 }

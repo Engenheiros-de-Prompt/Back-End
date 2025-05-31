@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BadgeModule } from './badge/badge.module';
+import { BadgeModule } from './modules/badge/badge.module';
 import { PrismaModule } from './modules/prisma/prisma.module';
 import { FeedbackModule } from './modules/feedback/feedback.module';
 import { UserModule } from './modules/user/user.module';

@@ -1,4 +1,3 @@
-// badge.controller.ts
 import {
   Controller,
   Get,
@@ -39,5 +38,22 @@ export class BadgeController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.badgeService.remove(+id);
+  }
+
+  // --- Integração com usuário (UserBadge) ---
+
+  // Atribuir badge a um usuário
+  @Post(':badgeId/users/:userId')
+  assignToUser(
+    @Param('badgeId') badgeId: string,
+    @Param('userId') userId: string,
+  ) {
+    return this.badgeService.assignBadgeToUser(+userId, +badgeId);
+  }
+
+  // Listar badges de um usuário
+  @Get('/users/:userId')
+  getByUser(@Param('userId') userId: string) {
+    return this.badgeService.getBadgesByUser(+userId);
   }
 }
