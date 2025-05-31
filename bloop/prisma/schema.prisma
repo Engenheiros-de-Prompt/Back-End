@@ -10,13 +10,13 @@ datasource db {
 }
 
 model User {
-  id         Int         @id @default(autoincrement())
-  name       String
-  feedbacks  Feedback[]
-  badges     UserBadge[]
-  teams      TeamUser[]
-  managedTeams Team[]   @relation("ManagerTeams")
-  Manager    Manager?
+  id            Int         @id @default(autoincrement())
+  name          String
+  feedbacks     Feedback[]
+  badges        UserBadge[]
+  teams         TeamUser[]
+  managedTeams  Team[]   @relation("ManagerTeams")
+  Manager       Boolean
 }
 
 model Badge {
@@ -34,18 +34,12 @@ model UserBadge {
   @@id([userId, badgeId])
 }
 
-model Manager {
-  userId Int   @id
-  user   User  @relation(fields: [userId], references: [id])
-}
-
 model Team {
   id          Int        @id @default(autoincrement())
   name        String
   managerId   Int
   manager     User       @relation("ManagerTeams", fields: [managerId], references: [id])
   users       TeamUser[]
-  sprints     Sprint[]
 }
 
 model TeamUser {
@@ -64,11 +58,4 @@ model Feedback {
   comment String
   user   User   @relation(fields: [userId], references: [id])
   userId Int
-}
-
-model Sprint {
-  id      Int    @id @default(autoincrement())
-  name    String
-  team    Team   @relation(fields: [teamId], references: [id])
-  teamId  Int
 }

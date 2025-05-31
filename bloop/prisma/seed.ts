@@ -4,24 +4,37 @@ const prisma = new PrismaClient();
 async function main() {
   // Criar Badges
   const badge1 = await prisma.badge.create({
-    data: { name: 'Leader' }
+    data: { 
+      name: 'Leader'
+     }
   });
 
   const badge2 = await prisma.badge.create({
-    data: { name: 'Mentor' }
+    data: { 
+      name: 'Mentor'
+    }
   });
 
   // Criar Usuários
   const user1 = await prisma.user.create({
-    data: { name: 'Alice' }
+    data: { 
+      name: 'Alice',
+      Manager: false
+    }
   });
 
   const user2 = await prisma.user.create({
-    data: { name: 'Bob' }
+    data: { 
+      name: 'Bob',
+      Manager: false
+    }
   });
 
   const user3 = await prisma.user.create({
-    data: { name: 'Charlie' }
+    data: { 
+      name: 'Charlie',
+      Manager: false 
+    }
   });
 
   // Adicionar Feedbacks
@@ -58,14 +71,6 @@ async function main() {
           { userId: user3.id }
         ]
       }
-    }
-  });
-
-  // Criar Sprint para o Time
-  await prisma.sprint.create({
-    data: {
-      name: 'Sprint 1',
-      teamId: team.id
     }
   });
 
