@@ -1,8 +1,10 @@
-package com.engprompt.bloop;
+package com.engprompt.bloop.model;
+
+import com.engprompt.bloop.Badge;
 
 import java.util.List;
 
-class User {
+public class User {
     int id;
     String name;
     int score;

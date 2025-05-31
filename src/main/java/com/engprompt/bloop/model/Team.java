@@ -1,4 +1,4 @@
-package com.engprompt.bloop;
+package com.engprompt.bloop.model;
 
 import java.util.List;
 
