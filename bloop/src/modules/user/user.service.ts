@@ -7,6 +7,17 @@ import { User } from '@prisma/client';
 export class UserService {
   constructor(private readonly prismaService: PrismaService) {}
 
+  async getUsersByTeamId(teamId: number) {
+    let teamusers = this.prismaService.teamUser.findMany({
+        where: { teamId },
+        include: { user: true },
+    })
+
+    return teamusers.then((teamUsers) => {
+      return teamUsers.map((teamUser) => teamUser.user);
+    });
+  }
+
   async getAllUsers() {
     return this.prismaService.user.findMany();
   }

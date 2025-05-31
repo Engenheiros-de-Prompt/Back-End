@@ -17,6 +17,11 @@ export class UserController {
     return this.userService.getUserById(id);
   }
 
+  @Get('getUsersByteamId/:teamId')
+  async getUsersByTeamId(teamId: number) {
+    return this.userService.getUsersByTeamId(teamId);
+  }
+
   @Post('createUser')
   async createUser(@Body() body: UserDto) {
     return this.userService.createUser(body);
