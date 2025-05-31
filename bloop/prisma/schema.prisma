@@ -59,9 +59,9 @@ model TeamUser {
 
 model Feedback {
   id     Int    @id @default(autoincrement())
-  Hard   String
-  Soft   String
-  Score  Int
+  Hard   Int
+  Soft   Int
+  comment String
   user   User   @relation(fields: [userId], references: [id])
   userId Int
 }
